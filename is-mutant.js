@@ -1,8 +1,9 @@
 
+const horizontalRegex = /A{4}|T{4}|C{4}|G{4}/
 
 function horizontal(dna) {
     return dna.some(function (row) {
-        return row.match(/A{4}|T{4}|C{4}|G{4}/) != null
+        return row.match(horizontalRegex) != null
     })
 }
 
