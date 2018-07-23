@@ -2,16 +2,21 @@
 
 Repositorio con el código asociado al Test.
 
-## Arquitectura
+Se plantea un servicio con los dos endpoints solicitados:
+* POST /mutant
+* GET /stats
+
+## Arquitectura y Funcionamiento
 
 El test está desplegado mediante Google Cloud, en particular con App Engine en un ambiente flexible.
 
-Al recibir una petición en el endpoint /mutant se analiza el DNA y se guarda el resultado en 
-Google Cloud Datastore. 
+Se utilizó una base de datos NoSQL (Datastore) provista por Google Cloud para guardar todos los requests realizados a /mutant. Luego, se utiliza una instancia de Redis para mantener las estadísticas con respecto a la cantidad de mutantes y humanos detectados.
 
-Posteriormente, se actualiza en un Redis (Google Cloud Memorystore) segun corresponda el contador que lleva la cuenta de cuantos humanos y mutantes fueron detectados.
+Al recibir una petición en el endpoint /mutant se analiza el DNA y se guarda el resultado en Google Cloud Datastore. 
 
-El endpoint /stats consulta los valores en Redis para responder.
+Posteriormente, se actualiza en Redis (Google Cloud Memorystore) el contador que lleva la cuenta de cuantos humanos y mutantes fueron detectados.
+
+Finalmente, el endpoint /stats consulta los valores en Redis para responder.
 
 ## Ejecución
 
@@ -68,11 +73,11 @@ Response:
 }
 ```
 
-## Test
+## Test y Pruebas de Carga
 
 Para realizar test unitario, se puede utilizar el comando `npm run test`. Esto además deja en la carpeta /coverage un reporte de cobertura.
 
-Se realizaron también tests mediante varias herramientas, para validar el comportamiento de la aplicación en un momento de carga.
+Se realizaron también pruebas de carga mediante varias herramientas, para validar el comportamiento de la aplicación en un momento de carga.
 
 Las herramientas utilizadas fueron:
  * Apache Benchmark
