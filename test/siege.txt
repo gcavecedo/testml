@@ -1,0 +1,8 @@
+Mutante:
+siege --concurrent=100 --content-type="application/json" 'https://testml-210618.appspot.com/mutant POST {"dna": ["ATGCAAGTGT", "CAGTTCGAGG", "TTCTGTACAA", "AGAAGGAGGA", "CTCCAACTTT", "TCACGGAAGG", "AGAAAGACCA", "CTCCGACCAG", "TCACAATTTA", "AGAAGGTAGA"]}'
+
+Humano:
+siege --concurrent=100 --content-type="application/json" 'https://testml-210618.appspot.com/mutant POST {"dna": ["ATGCAAGTGT", "CAGTTCGAGG", "TTCTGTACAA", "AGAAGGAGGA", "CTCCAACTTT", "TCACGGAAGG", "AGAAAGACCA", "CTCCGACCAG", "TCACGATTTA", "AGAAGGTAGA"]}'
+
+Stats:
+siege --concurrent=100 'https://testml-210618.appspot.com/stats'

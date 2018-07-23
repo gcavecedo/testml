@@ -1,0 +1,5 @@
+{
+    "GCLOUD_PROJECT": "testml-210618",
+    "REDIS_HOST": "10.0.0.3",
+    "REDIS_PORT": "6379"
+}

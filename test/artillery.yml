@@ -1,0 +1,26 @@
+config:
+  target: "https://testml-210618.appspot.com/"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      rampTo: 200
+      name: "Warm up the application"
+    - duration: 180
+      arrivalRate: 200
+      name: "Sustained max load"
+    - duration: 60
+      arrivalRate: 5
+      name: "Break"
+    - duration: 180
+      arrivalRate: 500
+      name: "Sustained max load 2"
+scenarios:
+  - flow:
+    - post:
+        url: "/mutant"
+        json:
+          dna:
+            - ATGA
+            - AAAT
+            - AAAT
+            - AGAA

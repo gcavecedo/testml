@@ -1,0 +1,6 @@
+{
+    "GCLOUD_PROJECT": "testml-210618",
+    "REDIS_HOST": "127.0.0.1",
+    "REDIS_PORT": "6379",
+    "DATASTORE_API_ENDPOINT": "http://127.0.0.1:8081"
+}
