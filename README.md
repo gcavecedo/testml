@@ -6,6 +6,8 @@ Se plantea un servicio con los dos endpoints solicitados:
 * POST /mutant
 * GET /stats
 
+URL base: https://testml-210618.appspot.com/
+
 ## Arquitectura y Funcionamiento
 
 El test está desplegado mediante Google Cloud, en particular con App Engine en un ambiente flexible.
